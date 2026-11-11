@@ -9,3 +9,4 @@ local.properties
 *.keystore
 *.p12
 AGENTS.local.md
+__pycache__/

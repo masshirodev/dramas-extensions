@@ -17,7 +17,7 @@ if git diff --cached --name-only | grep -Ei '\.(jks|keystore|p12|pk8|pem)$'; the
   fail "a key or keystore is staged"
 fi
 
-python3 -m py_compile scripts/make-index.py scripts/make-fixtures.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m py_compile scripts/make-index.py scripts/make-fixtures.py
 bash -n scripts/release.sh scripts/gradle.sh scripts/make-icons.sh scripts/check.sh
 
 scripts/gradle.sh --quiet :core:test testDebugUnitTest assembleDebug
