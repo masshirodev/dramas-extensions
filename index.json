@@ -1,0 +1,52 @@
+{
+  "name": "Dramas Extensions (masshirodev)",
+  "badgeLabel": "Dramas",
+  "signingKey": "6316f446afb596e54ee50077407072d2510e301fcc32a8ff0095d6d123a5b3ba",
+  "contact": {
+    "website": "https://github.com/masshirodev/dramas-extensions"
+  },
+  "extensionList": {
+    "extensions": [
+      {
+        "name": "DramaBox",
+        "packageName": "eu.kanade.tachiyomi.animeextension.en.dramabox",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/masshirodev/dramas-extensions/repo/apk/aniyomi-en.dramabox-v14.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/masshirodev/dramas-extensions/repo/icon/eu.kanade.tachiyomi.animeextension.en.dramabox.png"
+        },
+        "extensionLib": "14",
+        "versionCode": "1",
+        "versionName": "14.1",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "sources": [
+          {
+            "id": "5740943650230045274",
+            "name": "DramaBox",
+            "language": "en",
+            "homeUrl": "https://www.dramaboxdb.com"
+          }
+        ]
+      },
+      {
+        "name": "ReelShort",
+        "packageName": "eu.kanade.tachiyomi.animeextension.en.reelshort",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/masshirodev/dramas-extensions/repo/apk/aniyomi-en.reelshort-v14.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/masshirodev/dramas-extensions/repo/icon/eu.kanade.tachiyomi.animeextension.en.reelshort.png"
+        },
+        "extensionLib": "14",
+        "versionCode": "1",
+        "versionName": "14.1",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "sources": [
+          {
+            "id": "6410229240054931522",
+            "name": "ReelShort",
+            "language": "en",
+            "homeUrl": "https://www.reelshort.com"
+          }
+        ]
+      }
+    ]
+  }
+}
