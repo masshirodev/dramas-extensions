@@ -1,0 +1,10 @@
+{
+  "name": "DramaBox",
+  "pkg": "en.dramabox",
+  "class": ".DramaBox",
+  "lang": "en",
+  "baseUrl": "https://www.dramaboxdb.com",
+  "lib": "14",
+  "versionCode": 1,
+  "nsfw": 0
+}

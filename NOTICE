@@ -1,0 +1,11 @@
+dramas-extensions
+Copyright 2026 masshirodev (https://github.com/masshirodev)
+
+Licensed under the Apache License, Version 2.0 (LICENSE).
+
+These extensions are built against Aniyomi's extensions-lib
+(https://github.com/aniyomiorg/extensions-lib, Apache-2.0), which is not
+included in them: the host application supplies it at runtime.
+
+ReelShort and DramaBox are the names of third-party services. This project is
+not affiliated with or endorsed by them.

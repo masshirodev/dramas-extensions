@@ -1,0 +1,11 @@
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+.kotlin/
+# Signing material never lives here (doc/SIGNING.md).
+*.jks
+*.keystore
+*.p12
+AGENTS.local.md

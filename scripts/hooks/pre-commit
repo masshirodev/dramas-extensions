@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Installed by scripts/install-hooks.sh (core.hooksPath). Never skipped.
+set -euo pipefail
+top=$(git rev-parse --show-toplevel)
+cd "$top"
+
+if [ -f gradlew ]; then
+  # main: the build's checks and the unit tests.
+  exec scripts/check.sh
+fi
+
+# The repo branch (written by scripts/release.sh): the index must be whole.
+python3 -I - <<'PY'
+import json, os, sys
+meta = json.load(open("repo.json"))["meta"]
+fp = meta["signingKeyFingerprint"]
+v2 = json.load(open("index.json"))
+legacy = json.load(open("index.min.json"))
+assert v2["signingKey"] == fp, "index.json's signingKey is not repo.json's"
+for e in legacy:
+    assert os.path.isfile(os.path.join("apk", e["apk"])), f"missing apk/{e['apk']}"
+    assert os.path.isfile(os.path.join("icon", e["pkg"] + ".png")), f"missing icon for {e['pkg']}"
+assert {e["pkg"] for e in legacy} == {e["packageName"] for e in v2["extensionList"]["extensions"]}, "the two indexes disagree"
+print(f"pre-commit (repo branch): {len(legacy)} extensions, key {fp[:16]}...")
+PY

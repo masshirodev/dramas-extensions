@@ -1,0 +1,10 @@
+{
+  "name": "ReelShort",
+  "pkg": "en.reelshort",
+  "class": ".ReelShort",
+  "lang": "en",
+  "baseUrl": "https://www.reelshort.com",
+  "lib": "14",
+  "versionCode": 1,
+  "nsfw": 0
+}
