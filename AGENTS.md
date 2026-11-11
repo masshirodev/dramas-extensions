@@ -89,3 +89,15 @@ stream in the clear in a plain response, no key or custom encryption, and locked
 episodes served with no address. Add `src/<lang>/<name>/` with its
 `extension.json`, a pure parser with fixture tests, and a section in
 `doc/SOURCES.md`.
+
+## Board
+
+"dramas-extensions" in Lattice. Labels beyond the defaults (Feature, Bug, Design,
+Infra, Docs):
+
+- `Owner decision`: waits on the owner's call; agents write options and a
+  recommendation on the card, never pick.
+- `Action needed`: waits on something only the owner can do; the card has the steps.
+- `Blocked`: waiting on something outside the card.
+- `Tsundoku side`: the change lands in tsundoku or tsundoku-engine, not here.
+- `New site`: a candidate extension; it must pass `doc/SOURCES.md`, "What qualifies a site".

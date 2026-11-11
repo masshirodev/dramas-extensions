@@ -87,4 +87,5 @@ where the script imports `src/lib/server/engine/repo-index.ts` and
 `apk-signature.ts`, previews
 `https://raw.githubusercontent.com/masshirodev/dramas-extensions/repo/index.min.json`,
 downloads each listed APK and checks `signedBy(apk, fingerprint)`. It touches no
-database. The 2026-11-11 run is recorded in the first release's notes on the board.
+database. The 2026-11-11 run is recorded on card c15 ("Build and publish the ReelShort and
+DramaBox extensions (14.1)") of the dramas-extensions board.
