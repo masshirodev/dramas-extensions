@@ -8,7 +8,9 @@
 # not ours. `./gradlew --stop` is not used either: it stops every daemon of this
 # Gradle version the user owns, including other builds'.
 set -uo pipefail
-cd "$(dirname "$0")/.."
+# GRADLE_ROOT builds another project with this script (one that uses this repository
+# as a submodule); by default, this repository.
+cd "${GRADLE_ROOT:-$(dirname "$0")/..}"
 
 export JAVA_HOME=${DRAMAS_JAVA_HOME:-$HOME/.sdkman/candidates/java/17.0.18-amzn}
 [ -x "$JAVA_HOME/bin/java" ] || { echo "gradle.sh: no JDK 17 at $JAVA_HOME (set DRAMAS_JAVA_HOME)" >&2; exit 1; }

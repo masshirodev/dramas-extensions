@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write the `repo` branch: APKs, icons, repo.json, index.json and index.min.json.
 
-Usage: make-index.py <repo-dir> <module-dir>=<signed-apk> [...]
+Usage: [REPO_META=<repo-meta.json>] make-index.py <repo-dir> <module-dir>=<signed-apk> [...]
 
 <repo-dir> is a checkout of the `repo` branch (empty on the first release). Each
 <module-dir> is an extension (src/<lang>/<name>) and <signed-apk> the release APK
@@ -42,7 +42,9 @@ def badging(apk: str) -> dict:
 
 
 def main(repo: str, pairs: list[str]) -> None:
-    meta = json.load(open(os.path.join(ROOT, "repo-meta.json")))
+    # REPO_META names another repository's metadata (its name, key and served URL), so a
+    # repository built on this one's tooling writes its own index (doc/RELEASING.md).
+    meta = json.load(open(os.environ.get("REPO_META") or os.path.join(ROOT, "repo-meta.json")))
     base = meta["repoBranchUrl"]
     os.makedirs(os.path.join(repo, "apk"), exist_ok=True)
     os.makedirs(os.path.join(repo, "icon"), exist_ok=True)

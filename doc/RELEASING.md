@@ -54,6 +54,13 @@ MD5 of `"<name lowercased>/<lang>/1"`, as a positive long (`make-index.py`,
 
 No `index.pb` is published (see `doc/ARCHITECTURE.md`).
 
+## Reusing the tooling
+
+Another repository can build on this one as a git submodule: `scripts/gradle.sh`
+builds the project named by `GRADLE_ROOT` instead of this one, and `make-index.py`
+reads the repository metadata (name, key fingerprint, served URL) from `REPO_META`
+instead of `repo-meta.json`. Both default to this repository.
+
 ## When a step refuses
 
 | Message | Meaning |
